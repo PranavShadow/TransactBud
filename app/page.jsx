@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       Hi! My name is Pranav
       <br/>
-      <Button>Help</Button>
+      <Button variant={"destructive"}>Help</Button>
     </div>
   );
 }
