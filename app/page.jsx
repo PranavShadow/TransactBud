@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="features" className="bg-gray-50 py-20">
+      <section id="features"  className="bg-gray-50 py-20">
         <div className="container mx-auto px-4 md:px-6 text-center space-y-2">
           <Badge variant="outline" className="bg-green-100 text-green-700">
             Features
@@ -87,7 +87,7 @@ export default function Home() {
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-3">
             {STEPS.map(({ description, label, title }) => (
-              <div className="flex flex-col items-center space-y-4">
+              <div className="flex flex-col items-center space-y-4" key={title}>
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-xl font-bold text-green-600">{label}</div>
                 <h3 className="text-xl font-bold">{title}</h3>
                 <p className="text-gray-500 text-center">{description}</p>
@@ -110,7 +110,7 @@ export default function Home() {
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.map(({ quote, name, role, image }) => (
-              <Card>
+              <Card key={name}>
                 <CardContent className="space-y-4 p-6">
                   <p className="text-gray-500">{quote}</p>
 
@@ -131,6 +131,29 @@ export default function Home() {
 
         </div>
       </section>
+
+      <section className="py-20 gradient">
+        <div className="container mx-auto px-4 md:px-6 text-center space-y-6 ">
+          <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl text-white">
+            Ready to simplify expense sharing?
+          </h2>
+
+          <p className="mx-auto max-w-[600px] text-green-100 md:text-xl/relaxed">
+          Join thousands of users who have made splitting expenses stress-free.
+          </p>
+
+          <Button asChild>
+            <Link href="/dashboard">
+            Get Started
+            <ArrowRight className="ml-2 h-4 w-4"/>
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      <footer className="border-t bg-gray-50 py-4 text-center text-sm text-muted-foreground">
+        Copyright @Pranavgg.xyz | Building in Progress
+      </footer>
     </div>
   );
 }
